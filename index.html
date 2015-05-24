@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Documentation
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Basic Animation in Javascript and CSS</title>
+  <meta name="description" content="A How-To Guide for CS90 @ Oregon State University, Spring 2015">
+  <meta name="author" content="Andrew Shen">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <!-- Page
+  –––––––––––––––––––––––––––––––––––––––––––––––––– --> 
+  <nav class="nav-bar">
+	<a href="#partone">Part One</a>
+	<a href="#parttwo">Part Two</a>
+	<a href="#partthree">Part Three</a>
+	<a href="#partfour">Part Four</a>
+	<a href="#partfive">Part Five</a>
+  </nav>
+  
+  <div class="container">
+	<div class="row">
+      <div class="twelve columns" style="margin-top: 5%" id="partone">
+		<h1>CS290 How To Guide:</h1>
+        <h1>Part One: On Animations Using CSS and JavaScript</h1>
+        <p>Animated websites can be breathtaking but at the same time, programmers have to consider which tools to use to bring their sites to life. As more and more people are relying on their phones, tablets, and other mobile devices to consume content, Adobe Flash, which once was a staple of every serious web/graphics designer's arsenal is becoming sidelined due to compatibility issues and for the simple fact Flash animations are not battery friendly and are, for a lack of better words, resource hogs! As a result, most modern mobile operating systems and mobile web browsers do not support Flash. But this doesn't have to mean that websites have to be completely static!</p>
+		<p>In fact, with the immense and increasing popularity of responsive web development, developers are inclined incorporate tasteful and well-executed instances of animation in their designs. The modern CSS library and, to an even greater extent, JavaScript, both incorporate a number of tools that allow for the creation of beautifully animated websites that are fully compatible with a large number of devices.</p>
+		<p>This how-to guide provides an introduction into the basics of harnessing CSS and Javascript to bring the various aspects of any website to life!</p>
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="twelve columns" style="margin-top: 5%" id="parttwo">
+        <h2>Part Two: CSS or JavaScript?</h2>
+        <p><b>CSS: </b>The common understanding is that using CSS animation is well suited for bringing self-contained UI elements to life. That is: CSS works well for navigation menus or showing tool tips.</p>
+		<p><b>JavaScript: </b>On the other hand, JavaScript is much more robust and offers the developer almost limitless freedom to animate UI elements and objects. It is commonly held that compared to CSS, JavaScript is better suited for dynamic position tracking, timing, and other more complex operations in animation.</p>
+		<p>Generally, CSS will be the simplest and most straightforward way to bring animations to a web page, especially when the animation simply involves moving something on the screen (for example, sliding text or a box onto the screen) while JavaScript is more suited for more heavy duty animation.</p>
+		<h4>So what's the deal?</h4>
+		<p>Which one should we use?</p>
+		<p>The answer to this question is that a developer must learn when each language is more suited to a given task! What this means is that developer's need to be able to discern whether an intended animation can be controlled directly in the stylesheet or if they need to turn to JavaScript and it's derivatives (like JQuery) to power their animations.</p>
+		<p>Remember though, CSS and Javascript don't have to be incompatible with each other! CSS can be used on it's own for simple animations or it be augmented by JavaScript to do more interesting things!</p>
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="twelve columns" style="margin-top: 5%" id="partthree">
+        <h2>Part Three: CSS Animation</h2>
+        <p>You might be asking yourself, "aren't CSS stylesheets just meant to control the style aspects of a website and it's elements?" You're not wrong to ask this question as cascading style sheets are indeed best suited for this task. But within the modern CSS library, there are a number of great methods to animate transitions!</p>
+		<p>In CSS, these animations are generally done in two parts - first, writing the style to describe the animation and second, writing the set of keyframes to indicate the start and end of the animation style.</p>
+		<p>Simple, right?</p>
+		<p>You don't even have to have any knowledge of JavaScript to animate a website! Also, CSS animations are very processor friendly and animations coded in CSS tend to run very well even on low end devices!</p>
+		<p>Learning the CSS animation properties are simple and the number of properties to remember are relatively few:
+		<ul>
+			<li>animation-name:</li>
+			<li>animation-duration:</li>
+			<li>animation-timing-function:</li>
+			<li>animation-delay:</li>
+			<li>animation-iteration:</li>
+			<li>animation-direction:</li>
+			<li>animation-fill-mode:</li>
+			<li>animation-play-state:</li>
+		</ul>
+		<p>But even with these few properties, a number of different animations can be created! Take a look at the following code:</p>
+		<pre><code>
+h3 {
+	animation-duration: 10s;
+	animation-name: slidein;
+	animation-iteration-count: infinite;
+	color:darkcyan; }
+
+@keyframes slidein {
+	from {
+		margin-left: 100%;
+		width: 300%; 
+	}
+
+	to {
+		margin-left: 0%;
+		width: 100%;
+	}
+}
+		</code></pre>
+		Result:
+		<form method="GET" action="css-animation.html" target="_blank">
+			<input type="submit" value="See Live Example">
+		</form><br><br>
+		<p>This code uses uses CSS animation properties to slide in text in definitely from the right of the screen. These same properties can be used to animate any element that can be controlled via CSS, for example, images divs, etc.!</p><br>
+		<p>With that out of the way, let's take a look two more examples to show what slightly more advanced applications of CSS animations can do?</p>
+		<h5>Example 1:</h5>
+		<div class="showbox slideright">hover over me</div>
+		<div style="clear: left;"></div>
+		Code for Sliding Box:
+		<pre><code>
+.showbox {
+	float: left;
+	margin: 4em 1em;
+	height: 38px;
+	border: transparent;
+	border-radius: 4px;
+	color: #FFF;
+	background-color: #33C3F0;
+	line-height: 60px;
+	text-align: center;
+	text-transform: uppercase;
+	-webkit-transition: 1s ease-in-out;
+	-moz-transition: 1s ease-in-out;
+	-o-transition: 1s ease-in-out;
+	transition: 1s ease-in-out; }
+  
+.showbox.slideright:hover {
+	-webkit-transform: translate(3em,0);
+	-moz-transform: translate(3em,0);
+	-o-transform: translate(3em,0);
+	-ms-transform: translate(3em,0);
+	transform: translate(3em,0); }
+		</pre></code>
+		
+		<br><br>
+		<h5>Example 2:</h5>
+		<p>This image is actually a static .gif that is animated entirely with CSS! Hover over it and see what happens!</p>
+		<div class='spinningCSS'><div class='spin'></div></div>
+		Code for Spinning Div:
+		<pre><code>
+.spinningCSS {
+	border-radius: 50%;
+	width:350px;
+	height:350px;
+	overflow:hidden;
+	margin:20px;
+  
+	-webkit-animation: spin 3s linear 0s infinite reverse;
+	-moz-animation: spin 3s linear 0s infinite reverse;  
+	-ms-animation: spin 3s linear 0s infinite reverse;
+	-o-animation: spin 3s linear 0s infinite reverse;
+	animation: spin 3s linear 0s infinite reverse;
+  
+	-webkit-animation-play-state: paused;
+	-moz-animation-play-state: paused;
+	-ms-animation-play-state: paused;
+	-o-animation-play-state: paused;  
+	animation-play-state: paused; }
+
+.spin {
+	width:350px;
+	height:350px;
+	border-radius: 100%;
+	background-image: url('../images/torus-attractor-line-circle.gif');
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+  
+	-webkit-animation: spin 6s linear 0s infinite normal;
+	-moz-animation: spin 6s linear 0s infinite normal;
+	-ms-animation: spin 6s linear 0s infinite normal;
+	-o-animation: spin 6s linear 0s infinite normal;
+	animation: spin 6s linear 0s infinite normal; }
+
+.spinningCSS:hover {
+	-webkit-animation-play-state: running;
+	-moz-animation-play-state: running;
+	-ms-animation-play-state: running;
+	-o-animation-play-state: running;
+	animation-play-state: running; }
+	
+@keyframes spin {
+	0% { transform: rotate(360deg); }
+	100% { transform: rotate(0deg); } }
+@-webkit-keyframes spin {
+	0% {-webkit-transform: rotate(360deg); }
+	100% { -webkit-transform: rotate(0deg); } }
+@-ms-keyframes spin {
+	0% {-ms-transform: rotate(360deg); }
+	100% { -ms-transform: rotate(0deg); } }
+@-moz-keyframes spin {
+	0% { -moz-transform: rotate(360deg); }
+	100% { -moz-transform: rotate(0deg); } }
+@-o-keyframes spin {
+	0% { -o-transform: rotate(360deg); }
+	100% { -o-transform: rotate(0deg); } }
+		</code></pre>
+		<br><br><h5>Try it on your own!: Why don't you take some time to experiment with the various animation properties with various elements of your website to familiarize yourself with CSS animations?</h5>
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="twelve columns" style="margin-top: 5%" id="partfour">
+        <h2>Part Four: Bringing in JavaScript</h2>
+        <p>CSS is already sufficient to power simple animations and transformations but what happens when you really do need a more robust animation? JavaScript and it's many variations (JQuery being the most well known) can be used with CSS to create intricate animations, for example, incorporating easing algorithms and fine tuning positioning, timings, independence, etc.</p>
+		<p>Take this problem, for example:</p>
+		Animate an element to endlessly oscillate in scale but when the said element is hovered over, spin the element without disrupting the oscillation. Additionally, apply three other transformations that can be called on demand, and likewise, do not interrupt the perpetual scale oscillation of the element.
+		<p>By now it should be fairly easy for you to endlessly animate an element to oscillate in scale. Also, it would probably be easy for you to make the same element spin on hover or to apply a number of other transformations. But we want the oscillation to continue uninterrupted and for the animation to continue seamlessly! This would be nigh impossible to do simply relying on the animation properties of CSS! The solution is to turn to JavaScript (or one of its many variants) to control each intended transformation!</p>
+		<p>The following is a completed solution to the problem listed above. Go ahead and play around with it and notice how JavaScript (in this case, JQuery) controls are able to allow for more advanced animation properties than would have been possible with just CSS!
+		<form method="GET" action="js-example.html" target="_blank">
+			<input type="submit" value="See Live Example">
+		</form><br><br>
+		Example Code:
+		<pre><code>
+var $box = $("#box"),
+    $field = $("#field"),
+    rotation = 0,
+    rotationX = 0, 
+    rotationY = 0,
+    wanderTween, ignoreRollovers;
+
+//3D
+TweenLite.set($field, {perspective: 500});
+//Z-Axis Offset
+TweenLite.set($box, {transformOrigin:"center center -150px"});
+//Oscillation using X and Y
+TweenMax.to($box, 1.2, {
+	scaleX:0.8, 
+	scaleY:0.8, 
+	force3D:true, 
+	yoyo:true, 
+	repeat:-1, 
+	ease:Power1.easeInOut } );
+
+//on rollover
+$box.hover(function() {
+  if (!ignoreRollovers) {
+    rotation += 360;
+    ignoreRollovers = true;
+    TweenLite.to($box, 2, {rotation:rotation, ease:Elastic.easeOut});
+    TweenLite.delayedCall(1, function() {
+      ignoreRollovers = false; }); } }, function() {} );
+
+$("#rotation").click(function() {
+  rotation += 360;
+  TweenLite.to($box, 2, {rotation:rotation, ease:Elastic.easeOut }); });
+
+$("#rotationX").click(function() {
+  rotationX += 360;
+  TweenLite.to($box, 2, {rotationX:rotationX, ease:Power2.easeOut }); });
+
+$("#rotationY").click(function() {
+  rotationY += 360;
+  TweenLite.to($box, 2, {rotationY:rotationY, ease:Power1.easeInOut }); });
+
+$("#move").click(function() {
+  if (wanderTween) {
+    wanderTween.kill();
+    wanderTween = null;
+    TweenLite.to($box, 0.5, {x:0, y:0});
+  } else {
+    wander(); } });
+
+//Wander funtion
+function wander() {
+  var x = (($field.width() - $box.width()) / 2) * (Math.random() * 1.8 - 0.9),
+      y = (($field.height() - $box.height()) / 2) * (Math.random() * 1.4 - 0.7);
+  wanderTween = TweenLite.to($box, 2.5, {x:x, y:y, ease:Power1.easeInOut, onComplete:wander }); }
+  
+</code></pre>
+		<p>This is a great example to see the types of intricate animations and transformations that can be done using JavaScript! While it a developer would not necessarily want to use such flashy animations for everything, JavaScript (and its variants) allow for a vast amount of freedom in creating the animations and transformations they need to tastefully and beautifully add life to their web pages!</p>
+		<p>You might have noticed that the example above may not have run as smoothly as a CSS transformation so this is definitely something to consider when deciding whether to use CSS or JavaScript, or both.</p>
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="twelve columns" style="margin-top: 5%" id="partfive">
+        <h2>Part Five: Closing Thoughts</h2>
+        <p>With more and more people using mobile devices to consume their the majority of their content, especially in developing and growing markets, it is not surprising that Responsive Web Design is all the rage. This means the days Flash-heavy websites are over and in fact. CSS and JavaScript can be powerful tools in the hands of a developer, especially in the creation of effective and lively web pages. A developer must learn when to use which method, taking into account complexity, computing resources, efficiency, and a number of other considerations. Where CSS will suffice, it is probably a good idea to avoid using JavaScript to maximize loading times and smoothness of transitions but certain, more complex, animations require the use of JavaScript.</p>
+		<p>If you wanted to transform a div, on hover, to increase in scale and to spin with a slight rebound at the same time, would you use CSS or JavaScript?
+		<p>Well, if you were thinking that you would need JavaScript, you would be incorrect!</p>
+		<div id='spinningbox'>MAGIC BOX<br>
+			<a href="#partone">Part One</a><br>
+			<a href="#parttwo">Part Two</a><br>
+			<a href="#partthree">Part Three</a><br>
+			<a href="#partfour">Part Four</a><br>
+			<a href="#partfive">Part Five</a></div><br>
+		Code for Magic Box:
+		<pre><code>
+#spinningbox {
+	background-color: #CCC;
+	-webkit-transition: 1s ease-in-out;
+	-moz-transition: 1s ease-in-out;
+	-o-transition: 1s ease-in-out;
+	transition: 1s ease-in-out; }
+#spinningbox:hover {
+	background-color: #BBB;
+	-webkit-transform: rotate(360deg) scale(2);
+	-moz-transform: rotate(360deg) scale(2);
+	-o-transform: rotate(360deg) scale(2);
+	-ms-transform: rotate(360deg) scale(2);
+	transform: rotate(360deg) scale(2); }
+		</code></pre>
+		<p>The CSS for this is quite simple compared to the effect! As you get the hang of animations and transformations, you will be more and more able to discern when and where to use CSS and JavaScript! You'll also find that you can use both at the same time to great effect.</p>
+		<h5>I hope that this guide has been a good introduction into animations and transformations in JavaScript and CSS and best of luck in your developing endeavours in the future!</h5>
+		<a href="index.html">Back to Top</a>
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

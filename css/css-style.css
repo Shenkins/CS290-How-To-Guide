@@ -1,0 +1,18 @@
+h3 {
+  animation-duration: 5s;
+  animation-name: slidein;
+  color: darkcyan;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
