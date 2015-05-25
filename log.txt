@@ -1,0 +1,43 @@
+Start: Mon, 11 May 2015 16:00 -0700
+End: Mon, 11 May 2015 19:30;11 -0700
+Tasks: Brainstormed ideas while reading through documentations and libraries. Decided to do animations and transformations in CSS and JavaScript
+
+Start: Tue, 12 May 2015 9:00 -0700
+End: Tue, 12 May 2015 11:23:19 -0700
+Tasks: Read through documentation on animations using CSS and JavaScript
+
+Start: Wed, 13 May 2015 12:13 -0700
+End: Wed, 13 May 2015 16:52:12 -0700
+Tasks: Continued reading materials and documentation
+
+Start: Thu, 14 May 2015 13:22 -0700
+End: Thu, 14 May 2015 19:32:02 -0700
+Tasks: Tested and experimented with animations and transformations. Decided on the animations and transformations for how-to guide
+
+Start: Sat, 16 May 2015 12:00 -0700
+End: Sat, 16 May 2015 19:23:51 -0700
+Tasks: During this time, I built up the web page to host the how-to guide.
+
+Start: Mon, 17 May 2015 14:00 -0700
+End: Mon, 17 May 2015 17:02:32 -0700
+Tasks: Tweaked styles and divs for aesthetic purposes.
+
+Start: Tue, 18 May 2015 12:30 -0700
+End: Tue, 18 May 2015 19:02:32 -0700
+Tasks: Wrote out the guide in MSWord.
+
+Start: Wed, 19 May 2015 13:45 -0700
+End: Wed, 19 May 2015 20:30:02 -0700
+Tasks: Converted the guide to HTML.
+
+Start: Thu, 20 May 2015 11:45 -0700
+End: Thu, 20 May 2015 15:24:34 -0700
+Tasks: Formatting adjustments, CSS tweaks (specifically for the <code> and <pre> tags)
+
+Start: Fri, 21 May 2015 16:30 -0700
+End: Fri, 21 May 2015 18:23:00 -0700
+Tasks: Moved code I wrote earlier from jsfiddle to standalone pages and onto the guide where necessary. Continued to proof the guide.
+
+Start: Sun, 21 May 2015 08:30 -0700
+End: Sun, 21 May 2015 10:40:41 -0700
+Tasks: Created Git repo, proofed guide again. Made more CSS adjustments. Ready to submit.
